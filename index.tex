@@ -4,12 +4,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[magyar]{babel}
-
+\usepackage{verbatim}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage[justification=centering]{caption}
 \usepackage{url}
 \DeclareUnicodeCharacter{2212}{-}
+
 \begin{document}
 
 \title{Kerettanterv}
@@ -26,7 +27,8 @@
 \include{chapters/keretek}
 \include{chapters/jogszabalyok}
 \bibliography{references.bib}{}
-\bibliographystyle{plain}
+\label{sec:bibliographyk}
+\bibliographystyle{apalike}
 
 \chapter{Tantárgyi eredménycélok}
 \label{sec:tantargyi_celok}
@@ -34,5 +36,5 @@ Az alábbi lista azokat a tantárgyi eredménycélokat tartalmazza, amikből a g
 
 A továbbiakban a \emph{gyerek} szó helyett a miniszter által kiadott kerettantervek szóhasználata szerint a \emph{tanuló} szót alkalmazzuk.
 
-\include{chapters/eredmenyek}
+%\include{chapters/eredmenyek}
 \end{document}
