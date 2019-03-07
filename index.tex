@@ -6,9 +6,11 @@
 \usepackage[magyar]{babel}
 \usepackage{verbatim}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{array}
 \usepackage[justification=centering]{caption}
 \usepackage{url}
+\usepackage[nottoc,numbib]{tocbibind}
 \DeclareUnicodeCharacter{2212}{-}
 % heylyseglista tablazat miatt
 \usepackage{graphicx}
@@ -16,9 +18,9 @@
 \usepackage{natbib}
 \begin{document}
 
-\title{Kerettanterv}
-\author{Budapest School}
-
+\title{Budapest School Kerettanterv}
+\author{}
+\date{2019. m\'arcius}
 \maketitle
 
 \tableofcontents
@@ -29,15 +31,15 @@
 \include{chapters/tanulasiut}
 \include{chapters/keretek}
 \include{chapters/jogszabalyok}
-\bibliography{references.bib}{}
-\label{sec:bibliographyk}
-\bibliographystyle{apalike}
-
 \chapter{Tantárgyi eredménycélok}
 \label{sec:tantargyi_celok}
 Az alábbi lista azokat a tantárgyi eredménycélokat tartalmazza, amikből a gyerekeknek évfolyamonként legalább 50\%-ot kell teljesíteniük ahhoz, hogy az évfolyam abból a tárgyból teljesítettnek legyenek. Az eredménycélok a miniszter által kiadott kerettantervek\cite{ofi:kerettanterv}  eredményeinek adatbázisba helyezésével lettek egybegyűjtve.
 
 A továbbiakban a \emph{gyerek} szó helyett a miniszter által kiadott kerettantervek szóhasználata szerint a \emph{tanuló} szót alkalmazzuk.
-
 \include{chapters/eredmenyek}
+
+\bibliography{references.bib}{}
+\label{sec:bibliographyk}
+\bibliographystyle{apalike}
+
 \end{document}
