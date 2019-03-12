@@ -18,6 +18,11 @@
 \usepackage{natbib}
 \begin{document}
 
+% csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
+% vagy a pedprogramban
+\newif\ifkerettanterv
+\kerettantervtrue
+
 \title{Budapest School Kerettanterv}
 \author{}
 \date{2019. m\'arcius}
@@ -26,17 +31,17 @@
 \tableofcontents
 \newpage
 
-\include{chapters/bevezeto}
-\include{chapters/struktura}
-\include{chapters/tanulasiut}
-\include{chapters/keretek}
-\include{chapters/jogszabalyok}
+\input{chapters/kerettanterv/bevezeto}
+\input{chapters/kerettanterv/struktura}
+\input{chapters/kerettanterv/tanulasiut}
+\input{chapters/kerettanterv/keretek}
+\input{chapters/kerettanterv/jogszabalyok}
 \chapter{Tantárgyi eredménycélok}
 \label{sec:tantargyi_celok}
 Az alábbi lista azokat a tantárgyi eredménycélokat tartalmazza, amikből a gyerekeknek évfolyamonként legalább 50\%-ot kell teljesíteniük ahhoz, hogy az évfolyam abból a tárgyból teljesítettnek legyenek. Az eredménycélok a miniszter által kiadott kerettantervek\cite{ofi:kerettanterv}  eredményeinek adatbázisba helyezésével lettek egybegyűjtve.
 
 A továbbiakban a \emph{gyerek} szó helyett a miniszter által kiadott kerettantervek szóhasználata szerint a \emph{tanuló} szót alkalmazzuk.
-\include{chapters/eredmenyek}
+\input{chapters/kerettanterv/eredmenyek}
 
 \bibliography{references.bib}{}
 \label{sec:bibliographyk}

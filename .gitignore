@@ -1,0 +1,14 @@
+*.bbl
+kerettanterv.aux
+kerettanterv.blg
+kerettanterv.fdb_latexmk
+kerettanterv.fls
+kerettanterv.log
+kerettanterv.toc
+pedprog.aux
+pedprog.blg
+pedprog.dvi
+pedprog.fdb_latexmk
+pedprog.fls
+pedprog.log
+pedprog.toc
