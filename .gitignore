@@ -12,3 +12,10 @@ pedprog.fdb_latexmk
 pedprog.fls
 pedprog.log
 pedprog.toc
+pedprog.tdo
+old/
+diff/
+*.aux
+env/
+.DS_Store
+.vscode/
