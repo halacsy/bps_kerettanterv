@@ -1,0 +1,20 @@
+
+
+\begin{longtable}{p{7cm} | p{5cm} | l}
+
+    \textbf{feladat} & megjegyzés              & \textbf{referencia} \\
+    \hline
+
+\BLOCK{ for row in data }
+    \VAR{row.req}  &  \VAR{row.comment} & 
+       \BLOCK{ for ref in row.ref }
+       \ref{\VAR{ref}}. fejezet \apageref{\VAR{ ref }}. oldalon\VAR{ " és " if not loop.last }
+       \BLOCK{ endfor }
+       \\ \hline
+
+\BLOCK{ endfor }
+
+
+
+\end{longtable}
+
