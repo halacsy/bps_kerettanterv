@@ -1,6 +1,36 @@
 modifyLineBreaks:
+    preserveBlankLines: 1
+    condenseMultipleBlankLinesInto: 1
+
+
+modifyLineBreaks:
   
     textWrapOptions:
         columns: 80
     
-
+modifyLineBreaks:
+    paragraphsStopAt:
+        environments: 1
+        commands: 0
+        ifElseFi: 0
+        items: 1
+        specialBeginEnd: 0
+        heading: 0
+        filecontents: 0
+        comments: 0
+    removeParagraphLineBreaks:
+        all: 1
+# if you want the script to look for \item commands 
+# and format it, as follows (for example),
+#       \begin{itemize}
+#           \item content here
+#                 next line is indented
+#                 next line is indented
+#           \item another item
+#       \end{itemize}
+# then populate indentAfterItems. See also itemNames
+indentAfterItems:
+    itemize: 1
+    enumerate: 1
+    etaremune: 1
+    list: 1
