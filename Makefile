@@ -23,6 +23,9 @@ jog.csv:
 $(PROJNAME).pdf: $(PROJNAME).tex  $(GENERATED_FILE)
 	latexmk -g -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make $<
 
+%.docx: %.tex
+	pandoc $< -o $@ -f latex -t docx 
+
 cleanall:
 	latexmk -C
 	rm $(GENERATED_FILE)
