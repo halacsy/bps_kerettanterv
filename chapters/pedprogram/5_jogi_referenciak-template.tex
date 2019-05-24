@@ -1,6 +1,6 @@
 
 
-\begin{longtable}{p{7cm} | p{5cm} | l}
+\begin{longtable}{p{6cm} | p{4cm} |p{4cm}}
 
     \textbf{feladat} & megjegyzés              & \textbf{referencia} \\
     \hline
@@ -8,7 +8,7 @@
 \BLOCK{ for row in data }
     \VAR{row.req}  &  \VAR{row.comment} & 
        \BLOCK{ for ref in row.ref }
-       \ref{\VAR{ref}}. fejezet \apageref{\VAR{ ref }}. oldalon\VAR{ " és " if not loop.last }
+       \ref{\VAR{ref}}.~fejezet \apageref{\VAR{ ref }}.~oldalon\VAR{ " és " if not loop.last }
        \BLOCK{ endfor }
        \\ \hline
 
