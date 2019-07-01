@@ -11,6 +11,7 @@ pedprog.dvi
 pedprog.fdb_latexmk
 pedprog.fls
 pedprog.log
+pedprog.pdf
 pedprog.toc
 pedprog.tdo
 old/
@@ -19,3 +20,4 @@ diff/
 env/
 .DS_Store
 .vscode/
+.venv
