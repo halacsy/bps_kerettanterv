@@ -14,7 +14,7 @@ create_diff() {
         mkdir -pv diff/$DIR
     fi
 
-    git show HEAD~39:$FILE > old/$FILE
+    git show origin/master:$FILE > old/$FILE
 
     latexdiff  old/$FILE $FILE > diff/$FILE
 
@@ -27,6 +27,7 @@ do
 done
 
 create_diff pedprog.tex
+create_diff kerettanterv.tex
 cp references.bib diff/
 cd diff
 latexmk -pdf kerettanterv.tex

@@ -1,0 +1,103 @@
+\documentclass[magyar,12pt,a4paper,oneside]{report}
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[justification=centering]{caption}
+\usepackage{url}
+\usepackage[nottoc,numbib]{tocbibind}
+\DeclareUnicodeCharacter{2212}{-}
+% heylyseglista tablazat miatt
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{natbib}
+\begin{document}
+
+% csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
+% vagy a pedprogramban
+\newif\ifkerettanterv
+\kerettantervtrue
+
+\title{Budapest School Kerettanterv}
+\author{}
+\date{2019. \'aprilis}
+\maketitle
+%\include{level}
+
+% display page numbers in the headings. Start with roman numerals %
+\pagestyle{headings}
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\pagestyle{plain}
+
+
+
+\chapter{Tantárgyi tanulási eredmények}
+
+
+\BLOCK{ for subject in curriculum.high_priority_subjects }
+    \section{\VAR{subject.name}}
+
+    \BLOCK{ for period in subject.periods }
+   
+           \begin{longtable}{c | p{12cm} }
+            \caption[\VAR{subject.name} \VAR{period.years}.]{\VAR{subject.name} tantárgy tanulási eredményei féléves bontásokban a \VAR{period.years}. évfolyamszinteken. }  \\
+
+            \textbf{Félév} & \textbf{Tanulási Eredmény} \\
+            \hline
+            \endhead
+            \BLOCK{ for semester in period.semesters }
+                    
+                     \BLOCK{ for lo in semester.los }
+                     \VAR{lo.semester} &  \VAR{lo.lo} \\ \hline
+                     \BLOCK{ endfor }
+                 
+            \BLOCK{ endfor }
+            \end{longtable}
+            \clearpage
+
+    \BLOCK{ endfor }
+\BLOCK{ endfor }
+
+
+\BLOCK{ for subject in curriculum.integrated_subjects }
+    \section{\VAR{subject.name}}
+
+    \BLOCK{ for period in subject.periods }
+   
+           \begin{longtable}{c | p{12cm} }
+            \caption[\VAR{subject.name} \VAR{period.years}.]{\VAR{subject.name} tantárgy tanulási eredményei féléves bontásokban a \VAR{period.years}. évfolyamszinteken. }  \\
+
+            \textbf{Félév} & \textbf{Tanulási Eredmény} \\
+            \hline
+            \endhead
+            \BLOCK{ for semester in period.semesters }
+                    
+                     \BLOCK{ for lo in semester.los }
+                     \VAR{lo.semester} &  \VAR{lo.lo} \\ \hline
+                     \BLOCK{ endfor }
+                 
+            \BLOCK{ endfor }
+            \end{longtable}
+            \clearpage
+
+    \BLOCK{ endfor }
+\BLOCK{ endfor }
+
+\end{document}
+
+
+
