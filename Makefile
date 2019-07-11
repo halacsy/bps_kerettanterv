@@ -25,7 +25,8 @@ $(PROJNAME).pdf: $(PROJNAME).tex  $(GENERATED_FILE)
 
 lo.csv:
 	 curl "https://docs.google.com/spreadsheets/d/1P3cyZ3f03mc7UVqAjZleDmzc8qKrdJVZ0DbK_pxP0uw/gviz/tq?tqx=out:csv" > lo.csv
-
+chapters/kerettanterv/eredmenyek.tex: lo.csv
+	python code/convert_lo.py  > chapters/kerettanterv/eredmenyek.tex
 %.docx: %.tex
 	pandoc $< -o $@ -f latex -t docx 
 
