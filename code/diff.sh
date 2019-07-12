@@ -14,7 +14,7 @@ create_diff() {
         mkdir -pv diff/$DIR
     fi
 
-    git show HEAD~39:$FILE > old/$FILE
+    git show origin/master:$FILE > old/$FILE
 
     latexdiff  old/$FILE $FILE > diff/$FILE
 
@@ -23,10 +23,19 @@ create_diff() {
 FILES=`find chapters -name "*.tex"`
 for FILE in $FILES
 do
-    create_diff $FILE
+    if [ $FILE !=  "chapters/kerettanterv/eredmenyek-template.tex"  ]
+    then    
+        if [ $FILE != "chapters/kerettanterv/eredmenyek.tex" ]
+        then
+            create_diff $FILE
+        fi
+    fi
+
+
 done
 
 create_diff pedprog.tex
+create_diff kerettanterv.tex
 cp references.bib diff/
 cd diff
 latexmk -pdf kerettanterv.tex

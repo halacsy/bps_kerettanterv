@@ -1,0 +1,51 @@
+
+\BLOCK{ for subject in curriculum.high_priority_subjects }
+    \section{\VAR{subject.name}}
+
+    \BLOCK{ for period in subject.periods }
+   
+           \begin{longtable}{c | p{12cm} }
+            \caption[\VAR{subject.name} \VAR{period.years}.]{\VAR{subject.name} tantárgy tanulási eredményei féléves bontásokban a \VAR{period.years}. évfolyamszinteken. }  \\
+
+            \textbf{Félév} & \textbf{Tanulási Eredmény} \\
+            \hline
+            \endhead
+            \BLOCK{ for semester in period.semesters }
+                    
+                     \BLOCK{ for lo in semester.los }
+                     \VAR{lo.semester} &  \VAR{lo.lo} \\ \hline
+                     \BLOCK{ endfor }
+                 
+            \BLOCK{ endfor }
+            \end{longtable}
+            \clearpage
+
+    \BLOCK{ endfor }
+\BLOCK{ endfor }
+
+
+\BLOCK{ for subject in curriculum.integrated_subjects }
+    \section{\VAR{subject.name}}
+
+    \BLOCK{ for period in subject.periods }
+   
+           \begin{longtable}{c | p{12cm} }
+            \caption[\VAR{subject.name} \VAR{period.years}.]{\VAR{subject.name} tantárgy tanulási eredményei féléves bontásokban a \VAR{period.years}. évfolyamszinteken. }  \\
+
+            \textbf{Félév} & \textbf{Tanulási Eredmény} \\
+            \hline
+            \endhead
+            \BLOCK{ for semester in period.semesters }
+                    
+                     \BLOCK{ for lo in semester.los }
+                     \VAR{lo.semester} &  \VAR{lo.lo} \\ \hline
+                     \BLOCK{ endfor }
+                 
+            \BLOCK{ endfor }
+            \end{longtable}
+            \clearpage
+
+    \BLOCK{ endfor }
+\BLOCK{ endfor }
+
+
