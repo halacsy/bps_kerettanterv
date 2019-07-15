@@ -14,7 +14,7 @@ create_diff() {
         mkdir -pv diff/$DIR
     fi
 
-    if git show origin/master:$FILE > old/$FILE ; then
+    if git show ff136b0731235755a233d24d167546d0f2fd812b:$FILE > old/$FILE ; then
         echo "found in git"
     else 
         echo "" > old/$FILE
