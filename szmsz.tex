@@ -1,0 +1,50 @@
+\documentclass[magyar,12pt,a4paper,draft]{report}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\fancyhead[C]{\rule{.5\textwidth}{4\baselineskip}}% Add something BIG in the header
+\setlength{\headheight}{52pt}% ...at least 51.60004pt
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[magyar]{babel}
+
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+\usepackage{verbatim}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[justification=centering]{caption}
+\usepackage{url}
+\usepackage[nottoc,numbib]{tocbibind}
+\DeclareUnicodeCharacter{2212}{-}
+% heylyseglista tablazat miatt
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{natbib}
+\pagestyle{headings}
+
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+\begin{document}
+% csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
+% vagy a pedprogramban
+\newif\ifkerettanterv
+\kerettantervfalse
+
+\title{Budapest School–szervezeti és működési szabályzat}
+\author{Budapest School Általános Iskola és Gimnázium tanárai}
+\maketitle
+
+
+\tableofcontents
+\newpage
+ 
+
+\input{chapters/szmsz/index.tex}
+
+\bibliography{references.bib}{}
+\label{sec:bibliographyk}
+\bibliographystyle{apalike}
+ 
+\end{document}
