@@ -14,7 +14,11 @@ create_diff() {
         mkdir -pv diff/$DIR
     fi
 
-    git show origin/master:$FILE > old/$FILE
+    if git show origin/master:$FILE > old/$FILE ; then
+        echo "found in git"
+    else 
+        echo "" > old/$FILE
+    fi
 
     latexdiff  old/$FILE $FILE > diff/$FILE
 
@@ -35,10 +39,10 @@ do
 done
 
 create_diff pedprog.tex
-create_diff kerettanterv.tex
+# create_diff kerettanterv.tex
 cp references.bib diff/
 cd diff
-latexmk -pdf kerettanterv.tex
+latexmk -pdf pedprog.tex
 cat $FILES | tr ' ' $'\n' | grep "\DIFadd{" |wc -l
 
 cd ..
