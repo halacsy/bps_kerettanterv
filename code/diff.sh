@@ -17,7 +17,12 @@ create_diff() {
     if git show ff136b0731235755a233d24d167546d0f2fd812b:$FILE > old/$FILE ; then
         echo "found in git"
     else 
-        echo "" > old/$FILE
+        if [ $FILE ==  "chapters/pedprogram/regi_struktura_bevezeto.tex"  ]
+        then
+            cat $FILE > old/$FILE
+        else
+            echo "" > old/$FILE
+        fi
     fi
 
     latexdiff  old/$FILE $FILE > diff/$FILE
@@ -38,8 +43,8 @@ do
 
 done
 
-create_diff pedprog.tex
-# create_diff kerettanterv.tex
+#create_diff pedprog.tex
+create_diff kerettanterv.tex
 cp references.bib diff/
 cd diff
 latexmk -pdf pedprog.tex
