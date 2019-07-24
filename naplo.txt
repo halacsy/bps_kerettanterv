@@ -1,1 +1,4 @@
 Osztályozóvizsga fejezetben pontosítottuk, hogy ha nincs elegendő tanulási eredmény a portfólióban, akkor vagy kiegészíti a gyerek, vagy elfogadja, hogy még nem léphet. Szintén pontosítottuk, hogy hiányzás esetén hasonló módon kell eljárni. 
+
+
+javitottuk, hogy erdemjegy, osztalyzas
