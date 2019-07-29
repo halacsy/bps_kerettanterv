@@ -162,13 +162,6 @@
             "subject": "KULT"
         },
         {
-            "lo": ".",
-            "orig_subject": "Magyar nyelv és irodalom",
-            "period": "7-8",
-            "semester": 2,
-            "subject": "KULT"
-        },
-        {
             "lo": "Megismeri lakóhelye, szülőföldje természeti adottságait, hagyományos gazdasági tevékenységeit, néprajzi jellemzőit, történetének nevezetesebb eseményeit, jeles személyeit. A tanulási folyamatban kialakul az egyéni, családi, közösségi, nemzeti azonosságtudata.",
             "orig_subject": "Hon- és népismeret",
             "period": "5-6",
@@ -7674,7 +7667,7 @@
             "subject": "Harmónia"
         },
         {
-            "lo": "A tanulmányaihoz kapcsolódó feladatai során az információs problémamegoldás folyamatát önállóan, alkotóan végrehaja.",
+            "lo": "A tanulmányaihoz kapcsolódó feladatai során az információs problémamegoldás folyamatát önállóan, alkotóan végrehajtja.",
             "orig_subject": "Informatika",
             "period": "9-10",
             "semester": 4,
