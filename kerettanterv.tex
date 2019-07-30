@@ -1,13 +1,12 @@
-\documentclass[magyar,12pt,a4paper,oneside]{report}
+\documentclass[magyar,10pt,a5paper,twoside]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-
 
 \usepackage[T1]{fontenc}
 \usepackage[magyar]{babel}
 \usepackage{verbatim}
 \usepackage{booktabs}
-\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+%\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 
 \usepackage{longtable}
 \usepackage{array}
@@ -30,7 +29,7 @@
 \author{}
 \date{2019. augusztus}
 \maketitle
-%\include{level}
+%\include{felulvizsgalat_level}
 
 % display page numbers in the headings. Start with roman numerals %
 \pagestyle{headings}
@@ -43,14 +42,12 @@
 \pagenumbering{arabic}
 
 \pagestyle{plain}
-
+%s\listoftodos 
+\chapter{Bevezető}
 \input{chapters/kerettanterv/bevezeto}
 
 \chapter{Tanulás szervezése}
 \input{chapters/kerettanterv/struktura/index}
-
-\chapter{Tanulási utak}
-\input{chapters/kerettanterv/tanulasiut/index}
 
 \chapter{A tanulás keretei}
 \input{chapters/kerettanterv/keretek}
@@ -61,7 +58,7 @@
 
 A tanulási eredmények a miniszter által kiadott kerettantervek \cite{ofi:kerettanterv} alapján készültek. A miniszter által kiadott kerettantervek két éves szakaszokra bontva adják meg a tantárgyak célját, tematikus egységeit és ,,\emph{A fejlesztés várt eredményei a két évfolyamos ciklus végén}'' fejezetben az elvárt eredményeket. Ez útóbbi listák elemeit fogalmaztuk át úgy, hogy a tanulási eredményeknek egységes nyelvezete legyen: mindenhol az szerepel, hogy a gyerek mit \emph{csinál}, \emph{tud}, \emph{ért}, \emph{felismer}, stb.
 
-A miniszter által kiadott kerettantervek két éves ciklusokban gondolkoznak. A kerettantervünk a két éven belül félévenkénti bontásokban adja meg, hogy a tanulási eredményeket melyik félévben ajánlja a gyerekeknek. A lenti táblázatokban ez 1--4 szám jelzi. Például a 9--10 két éves ciklusban a 3. félév a 10. évfolyamszint első félévét jelöli.
+A miniszter által kiadott kerettantervek két éves ciklusokban gondolkoznak. A kerettantervünk a két éven belül félévenkénti bontásokban adja meg, hogy a tanulási eredményeket melyik félévben ajánlja a gyerekeknek. A lenti táblázatokban ezt 1--4 szám jelzi. Például a 9--10 két éves ciklusban a 3. félév a 10. évfolyamszint első félévét jelöli.
 
 A továbbiakban a \emph{gyerek} szó helyett a miniszter által kiadott kerettantervek szóhasználata szerint a \emph{tanuló} szót alkalmazzuk. \input{chapters/kerettanterv/eredmenyek}
 
