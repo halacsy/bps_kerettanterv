@@ -1,0 +1,138 @@
+\documentclass[magyar,10pt,a5paper,twoside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel} 
+\usepackage{verbatim}
+\usepackage{booktabs}
+%\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[justification=centering]{caption}
+\usepackage{url}
+\usepackage[nottoc,numbib]{tocbibind}
+\DeclareUnicodeCharacter{2212}{-}
+% heylyseglista tablazat miatt
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{natbib}
+
+\begin{document}
+
+% csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
+% vagy a pedprogramban
+\newif\ifkerettanterv
+\kerettantervtrue
+
+\title{Budapest School Modell}
+\author{}
+\date{2019. augusztus}
+\maketitle
+%\include{felulvizsgalat_level}
+
+% display page numbers in the headings. Start with roman numerals %
+\pagestyle{headings}
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\pagestyle{plain}
+%s\listoftodos 
+\chapter{Bevezető}
+\input{chapters/kerettanterv/bevezeto}
+\input{chapters/pedprogram/0_iskola_celja/alapelvek}
+\input{chapters/pedprogram/0_iskola_celja/emberkep}
+\input{chapters/pedprogram/0_iskola_celja/kapcsolodasok}
+
+\chapter{Tanulás megközelítése}
+\input{chapters/pedprogram/1-tanulas-megkozelitese/pedagogiai-pszichologiai-hatter}
+\input{chapters/pedprogram/1-tanulas-megkozelitese/pedagogiai-modszerek}
+\input{chapters/kerettanterv/kiemelt-fejlesztesi-iranyelvek}
+\input{chapters/pedprogram/1-tanulas-megkozelitese/jutalmazas-ertekeles}
+\input{chapters/pedprogram/1-tanulas-megkozelitese/kiemelt-figyelmet-igenylo-gyerekek}
+
+\chapter{Tanulás szervezése}
+\input{chapters/pedprogram/2-iskola-szervezete/bevezeto}
+\input{chapters/kerettanterv/struktura/mikroiskola}
+\input{chapters/kerettanterv/struktura/tanev_ritmusa}
+\input{chapters/kerettanterv/struktura/sajat-celok}
+\input{chapters/kerettanterv/struktura/tanulasi-szerzodes}
+\input{chapters/kerettanterv/struktura/tanari-szerepek}
+\input{chapters/pedprogram/3-tanarok/tanarok-feladatai}
+
+\input{chapters/kerettanterv/struktura/modulok}
+\input{chapters/pedprogram/2-iskola-szervezete/modulok-megkotes.tex}
+
+\input{chapters/kerettanterv/struktura/visszajelzes-ertekeles}
+\input{chapters/kerettanterv/struktura/portfolio}
+
+
+\input{chapters/pedprogram/2-iskola-szervezete/csoportok}
+
+
+\input{chapters/pedprogram/2-iskola-szervezete/felvetel-atvetel}
+\input{chapters/pedprogram/2-iskola-szervezete/hianyzasok}
+\input{chapters/pedprogram/2-iskola-szervezete/ki-viheti-el-a-gyereket}
+% innentol vagyunk koldoknezegetosek
+\input{chapters/pedprogram/2-iskola-szervezete/tanulasi-pontok}
+\input{chapters/pedprogram/2-iskola-szervezete/governance}
+\input{chapters/pedprogram/2-iskola-szervezete/konfliktusok-kezelese}
+\input{chapters/kerettanterv/keretek/minosegbiztositas}
+
+
+
+
+
+\chapter{A tanulás keretei}
+\input{chapters/kerettanterv/keretek/biztonsagos_kornyezet}
+\input{chapters/kerettanterv/keretek/tantargyak}
+% ez behuzza a kerettanterves reszt is
+\input{chapters/pedprogram/2-iskola-szervezete/bizonyitvany-evfolyamok}
+
+\input{chapters/kerettanterv/keretek/minosegbiztositas}
+\input{chapters/kerettanterv/keretek/tanarok}
+
+
+\input{chapters/pedprogram/4-helyi-tanterv/tanterv-program}
+% ezt kivesszuk, mutatva, hogy nekunk mindegy, mi a tantargy
+% \input{chapters/kerettanterv/keretek/tantargyak}
+%\input{chapters/kerettanterv/keretek/heti_oraszamok}
+%\input{chapters/kerettanterv/keretek/nat_celjainak_tamogatasa}
+%\input{chapters/kerettanterv/keretek/erettsegi}
+\input{chapters/pedprogram/4-helyi-tanterv/erettsegi-kesobb}
+\input{chapters/pedprogram/4-helyi-tanterv/szemelyisegfejlesztes}
+\input{chapters/pedprogram/4-helyi-tanterv/mindennapos-testmozgas}
+\input{chapters/pedprogram/4-helyi-tanterv/kozossegfejlesztes}
+\input{chapters/pedprogram/4-helyi-tanterv/elsosegely}
+\input{chapters/pedprogram/4-helyi-tanterv/eselyegyenloseg}
+\input{chapters/pedprogram/4-helyi-tanterv/onkentesszolgalat}
+\input{chapters/pedprogram/4-helyi-tanterv/nemzetisegek}
+\input{chapters/pedprogram/4-helyi-tanterv/kornyezeti-neveles}
+\input{chapters/pedprogram/4-helyi-tanterv/tankonyvek}
+
+\input{chapters/kerettanterv/jogszabalyok}
+\input{chapters/pedprogram/5_jogi_referenciak}
+
+
+\chapter{Tantárgyi tanulási eredmények}
+\label{sec:tantargyi_tanulasi_eredmenyek}
+
+A tanulási eredmények a miniszter által kiadott kerettantervek \cite{ofi:kerettanterv} alapján készültek. A miniszter által kiadott kerettantervek két éves szakaszokra bontva adják meg a tantárgyak célját, tematikus egységeit és ,,\emph{A fejlesztés várt eredményei a két évfolyamos ciklus végén}'' fejezetben az elvárt eredményeket. Ez útóbbi listák elemeit fogalmaztuk át úgy, hogy a tanulási eredményeknek egységes nyelvezete legyen: mindenhol az szerepel, hogy a gyerek mit \emph{csinál}, \emph{tud}, \emph{ért}, \emph{felismer}, stb.
+
+A miniszter által kiadott kerettantervek két éves ciklusokban gondolkoznak. A kerettantervünk a két éven belül félévenkénti bontásokban adja meg, hogy a tanulási eredményeket melyik félévben ajánlja a gyerekeknek. A lenti táblázatokban ezt 1--4 szám jelzi. Például a 9--10 két éves ciklusban a 3. félév a 10. évfolyamszint első félévét jelöli.
+
+A továbbiakban a \emph{gyerek} szó helyett a miniszter által kiadott kerettantervek szóhasználata szerint a \emph{tanuló} szót alkalmazzuk. 
+
+\input{chapters/kerettanterv/eredmenyek}
+
+\bibliography{references.bib}{}
+\label{sec:bibliographyk}
+\bibliographystyle{apalike}
+
+\end{document}
