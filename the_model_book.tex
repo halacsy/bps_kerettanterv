@@ -35,6 +35,29 @@
 \usepackage{lscape}
 \usepackage{natbib}
 
+%% ezzel rakunk be ketoldalas kepeket. Mindig kettesevel
+%% rakunk be kepeket, balra es jobbra, teljes oldalra, fejlec nelkul.
+\newcommand{\ketoldaltkep}[2]{
+    \cleardoublepage
+    \begin{figure*}
+        \centering
+        \vspace*{-2.5cm}
+        \makebox[\textwidth]{
+        \includegraphics[width=\paperwidth]{#1}
+        }
+    \end{figure*}
+    
+    \begin{figure*}
+        \centering
+        \vspace*{-2.5cm}
+        \makebox[\textwidth]{
+        \includegraphics[width=\paperwidth]{#2}
+        }
+    \end{figure*}
+    \clearpage
+
+}
+
 \begin{document}
 
 % csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
@@ -64,6 +87,7 @@
 
 \chapter{Bevezető}
 \input{chapters/kerettanterv/bevezeto}
+\end{document}
 \input{chapters/pedprogram/0_iskola_celja/alapelvek}
 \label{sec:alapelvek}
 \input{chapters/pedprogram/0_iskola_celja/emberkep}
