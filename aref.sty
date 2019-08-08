@@ -1,0 +1,164 @@
+\makeatletter
+%%%%%%%% Definite articles
+% \az \az* \Az \Az*
+\def\az{a\@ifstar{\@az}{\az@}}
+\def\Az{A\@ifstar{\@az}{\az@}}
+\def\az@#1{\@az{#1}~#1}
+\def\@az#1{%
+  \hun@tempadef{relax}{relax}{#1}%
+  \edef\@tempb{\noexpand\@@az\@tempa\hbox!}%
+  \@tempb}
+
+\def\hun@tempadef#1#2#3{%
+  \begingroup
+    \def\setbox ##1{}%
+    \def\hbox ##1{}%
+    \def\accent ##1 ##2{##2}%
+    \def\add@accent ##1##2{##2}%
+    \def\@text@composite@x ##1##2{##2}%
+    \def\i{i}\def\j{j}%
+    \def\ae{a}\def\AE{A}\def\oe{o}\def\OE{O}%
+    \def\ss{s}\def\L{L}%
+    \def\d{}\def\b{}\def\c{}\def\t{}%
+    \expandafter\ifx\csname #1\endcsname\relax
+      \expandafter\ifx\csname #2\endcsname\relax
+        \xdef\@tempa{#3}%
+      \else
+        \xdef\@tempa{\csname #2\endcsname}%
+      \fi
+    \else
+      \xdef\@tempa{\csname #1\endcsname}%
+    \fi
+  \endgroup}
+
+% \azr \azr* \Azr \Azr* \azr( \Azr(
+\def\aref{\azr}
+\def\Aref{\Azr}
+\def\azr{a\@ifstar{\@azr}{\azr@}}
+\def\Azr{A\@ifstar{\@azr}{\azr@}}
+\def\azr@{\@ifnextchar ({\azr@@@}{\azr@@}}
+\def\azr@@#1{\@azr{#1}~\ref{#1}}
+\def\azr@@@(#1{\@azr{#1}~(\ref{#1}}
+\def\@azr#1{%
+  \hun@tempadef{hun@r@#1}{r@#1}{}%
+  \ifx\@tempa\empty
+  \else
+    \edef\@tempb{\noexpand\@@az\expandafter\@firstoftwo\@tempa\hbox!}%
+    \@tempb
+  \fi
+}
+
+% \azp \azp* \Azp \Azp*
+\def\apageref{\azp}
+\def\Apageref{\Azp}
+\def\azp{a\@ifstar{\@azp}{\azp@}}
+\def\Azp{A\@ifstar{\@azp}{\azp@}}
+\def\azp@#1{\@azp{#1}~\pageref{#1}}
+\def\@azp#1{%
+  \hun@tempadef{hun@r@#1}{r@#1}{}%
+  \ifx\@tempa\empty
+  \else
+    \edef\@tempb{\noexpand\@@az\expandafter\@secondoftwo\@tempa\hbox!}%
+    \@tempb
+  \fi
+}
+
+% \azc \azc* \Azc \Azc* \azc[] \Azc[]
+\def\acite{\azc}
+\def\Acite{\Azc}
+\def\azc{a\@ifstar{\@azc}{\azc@}}
+\def\Azc{A\@ifstar{\@azc}{\azc@}}
+\def\azc@{\@ifnextchar [{\azc@@}{\azc@@[]}}
+\def\azc@@[#1]#2{%
+  \@azc{#2}~\def\@tempa{#1}\ifx\@tempa\@empty\cite{#2}\else\cite[#1]{#2}\fi}
+\def\@azc#1{\@@azc#1,\hbox!}
+\def\@@azc#1,#2\hbox#3!{%
+  \hun@tempadef{hun@b@#1}{b@#1}{}%
+  \ifx\@tempa\empty
+  \else
+    \edef\@tempb{\noexpand\@@az\@tempa\hbox!}%
+    \@tempb
+  \fi
+}
+
+
+% This one counts the number of digits until a nondigit is found.
+% We need this to properly handle eg. 1.3.12 (subsec number)
+% or 3-45 (pagenumber precceded by chapter number).
+\def\hun@number@lehgth#1#2\hbox#3!{%
+  \ifcat\noexpand#11%
+    \ifnum\expandafter`\csname#1\endcsname>47
+      \ifnum\expandafter`\csname#1\endcsname<58
+        \advance\count@ by \@ne
+        \hun@number@lehgth#2\hbox\hbox!\fi\fi\fi}
+
+% This counts the number of letters until a nonletter is found.
+% This is used to distinguish single-letter labels from text labels.
+\def\hun@alph@lehgth#1#2\hbox#3!{%
+  \ifcat\noexpand#1A%
+    \advance\count@ by \@ne
+    \hun@alph@lehgth#2\hbox\hbox!\fi}
+
+
+% This is called if the label is expanded into some text
+\def\@@az@szoveg#1#2{%
+  \ifx#1A%
+    \let\@tempa\@tempb
+  \else\ifx#1E%
+    \let\@tempa\@tempb
+  \else\ifx#1I%
+    \let\@tempa\@tempb
+  \else\ifx#1O%
+    \let\@tempa\@tempb
+  \else\ifx#1U%
+    \let\@tempa\@tempb
+  \fi\fi\fi\fi\fi
+  \ifx\@tempa\@tempb
+  \else
+    \count@\z@
+    \hun@alph@lehgth#1#2\hbox\hbox!%
+    \ifnum\count@=\@ne
+      \ifx#1F%
+        \let\@tempa\@tempb
+      \else\ifx#1L%
+        \let\@tempa\@tempb
+      \else\ifx#1M%
+        \let\@tempa\@tempb
+      \else\ifx#1N%
+        \let\@tempa\@tempb
+      \else\ifx#1R%
+        \let\@tempa\@tempb
+      \else\ifx#1S%
+        \let\@tempa\@tempb
+      \else\ifx#1X%
+        \let\@tempa\@tempb
+      \else\ifx#1Y%
+        \let\@tempa\@tempb
+      \fi\fi\fi\fi\fi\fi\fi\fi
+    \fi
+  \fi}
+
+% \@@az
+% This is (mostly) written by David Carlisle.
+\def\@@az#1#2\hbox#3!{%
+  \let\@tempa\@empty
+  \def\@tempb{z}%
+  \uppercase{%
+    \ifx5#1%
+      \let\@tempa\@tempb
+    \else\ifx1#1%
+      \count@\@ne
+      \hun@number@lehgth#2\hbox\hbox!%
+      \loop
+      \ifnum\count@>\thr@@
+        \advance\count@-\thr@@
+      \repeat
+      \ifnum\count@=\@ne
+        \let\@tempa\@tempb
+      \fi
+    \else
+      \@@az@szoveg{#1}{#2}%
+    \fi\fi
+  }%
+  \@tempa}
+\makeatother
