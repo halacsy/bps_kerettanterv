@@ -35,7 +35,8 @@
 \newfontfamily\submainfont[Mapping=tex-text,Scale=0.9]{Minion Pro}
 \newfontfamily\chapterfont[Mapping=tex-text,Scale=2.0]{Minion Pro Bold}
 \newfontfamily\sectionfont[Mapping=tex-text,Scale=1.2]{Minion Pro Bold}
-\newfontfamily\subsectionfont[Mapping=tex-text]{Minion Pro Italic}
+\newfontfamily\subsectionfont[Mapping=tex-text]{Minion Pro}
+\newfontfamily\subsubsectionfont[Mapping=tex-text]{Minion Pro Bold}
 \newfontfamily\paragraphfont[Mapping=tex-text,Scale=0.9]{Minion Pro Bold}
 %% :LK
 \usepackage[raggedright]{titlesec}
@@ -44,8 +45,15 @@
             {\chapterfont}{\thechapter. fejezet}%
             {0.5 ex}{\vspace{1ex}}
 \titleformat{\section}{\sectionfont}{\thesection.}{0.5em}{}
-\titleformat{\subsection}{\subsectionfont}{\thesubsection.}{0.5em}{}
+\titleformat{\subsection}{\subsectionfont}{}{the}{\MakeUppercase}
+\titleformat{\subsubsection}
+{\subsubsectionfont}{}{}{}
 \titleformat{\paragraph}[runin]{\paragraphfont}{}{}{}
+%% subsection alatt nincs mar szamozas es nem is kerul a tartalomjegyzekbe
+%% UpperCase lesz a subsection es sima bold a subsubsection
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
 %% :LK
 \usepackage{caption}
 \DeclareCaptionLabelFormat{swappedTable}{#2. táblázat}
