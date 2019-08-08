@@ -1,19 +1,31 @@
-\documentclass[magyar,10pt,a5paper,twoside]{book}
-\usepackage[utf8]{inputenc}
+\documentclass[10pt,twoside]{book}
+\usepackage[paperwidth=145mm,paperheight=210mm,top=25mm,bottom=20mm,inner=20mm,outer=20mm]{geometry}
+% \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
-\usepackage[T1]{fontenc}
-\usepackage[magyar]{babel} 
+\usepackage[magyar]{babel}
 \usepackage{verbatim}
 \usepackage{booktabs}
 %\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+\usepackage{fontspec}
+\setmainfont{Minion Pro}
+\usepackage[raggedright]{titlesec}
+\setlength{\parskip}{0pt}
+\raggedbottom
+\usepackage{fancyhdr}
+\fancyhead[LE]{\thepage\qquad{\small\leftmark}}
+\fancyhead[RO]{{\small\leftmark}\qquad\thepage}
+\fancyhead[LO,RE]{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
 
 \usepackage{longtable}
 \usepackage{array}
 \usepackage[justification=centering]{caption}
 \usepackage{url}
 \usepackage[nottoc,numbib]{tocbibind}
-\DeclareUnicodeCharacter{2212}{-}
+% \DeclareUnicodeCharacter{2212}{-}
 % heylyseglista tablazat miatt
 \usepackage{graphicx}
 \usepackage{lscape}
@@ -33,7 +45,8 @@
 %\include{felulvizsgalat_level}
 
 % display page numbers in the headings. Start with roman numerals %
-\pagestyle{headings}
+% \pagestyle{headings}
+\pagestyle{fancy}
 \setcounter{page}{1}
 \pagenumbering{roman}
 
@@ -42,7 +55,8 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\pagestyle{plain}
+% \pagestyle{plain}
+\pagestyle{fancy}
 
 \chapter{Bevezető}
 \input{chapters/kerettanterv/bevezeto}
@@ -127,7 +141,7 @@ A tanulási eredmények a miniszter által kiadott kerettantervek \cite{ofi:kere
 
 A miniszter által kiadott kerettantervek két éves ciklusokban gondolkoznak. A kerettantervünk a két éven belül félévenkénti bontásokban adja meg, hogy a tanulási eredményeket melyik félévben ajánlja a gyerekeknek. A lenti táblázatokban ezt 1--4 szám jelzi. Például a 9--10 két éves ciklusban a 3. félév a 10. évfolyamszint első félévét jelöli.
 
-A továbbiakban a \emph{gyerek} szó helyett a miniszter által kiadott kerettantervek szóhasználata szerint a \emph{tanuló} szót alkalmazzuk. 
+A továbbiakban a \emph{gyerek} szó helyett a miniszter által kiadott kerettantervek szóhasználata szerint a \emph{tanuló} szót alkalmazzuk.
 
 \input{chapters/kerettanterv/eredmenyek}
 
