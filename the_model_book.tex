@@ -1,4 +1,4 @@
-\documentclass[10pt,twoside]{book}
+\documentclass[10pt,openright,twoside]{book}
 % LK: added twoside, headheight, headsep
 \usepackage[paperwidth=142mm,paperheight=197mm,top=24mm,bottom=22mm,inner=18mm,outer=22mm]{geometry}
 \usepackage[cam,a4,center]{crop}
@@ -10,6 +10,7 @@
 \setdefaultlanguage{magyar}
 \usepackage{aref}
 \usepackage{needspace}
+\usepackage{setspace}
 \widowpenalty=300
 \clubpenalty=300
 \setlength\parskip{0pt}
@@ -46,6 +47,11 @@
 \titleformat{\subsection}{\subsectionfont}{\thesubsection.}{0.5em}{}
 \titleformat{\paragraph}[runin]{\paragraphfont}{}{}{}
 %% :LK
+\usepackage{caption}
+\DeclareCaptionLabelFormat{swappedTable}{#2. táblázat}
+\captionsetup[table]{labelformat=swappedTable}
+\DeclareCaptionLabelFormat{swappedFigure}{#2. ábra}
+\captionsetup[figure]{labelformat=swappedFigure}
 \setlength{\parskip}{0pt}
 \raggedbottom
 \usepackage{fancyhdr}
@@ -55,7 +61,11 @@
 % \fancyhead[LO,RE]{}
 \fancyhead{}                              % clear header fields
 \fancyhead[RO,LE]{{\submainfont\thepage}} % right odd, left even
-\fancyhead[CO,CE]{{\submainfont\textsc{\leftmark}}}
+\fancyhead[CO,CE]{{\submainfont\textsc{\thechapter. fejezet: \rightmark}}}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markright{#1}}
+\renewcommand{\sectionmark}[1]{}
+\renewcommand{\subsectionmark}[1]{}
 %% :LK
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
@@ -93,6 +103,10 @@
     \clearpage
 
 }
+
+%% LK: temporary
+\overfullrule 2em
+%% :LK
 
 \begin{document}
 % csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
