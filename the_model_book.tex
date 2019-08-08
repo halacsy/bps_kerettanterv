@@ -1,5 +1,6 @@
 \documentclass[10pt,twoside]{book}
-\usepackage[paperwidth=145mm,paperheight=210mm,top=25mm,bottom=20mm,inner=20mm,outer=20mm]{geometry}
+% LK: added twoside, headheight, headsep
+%% \usepackage[pass,paperwidth=145mm,paperheight=210mm,top=25mm,bottom=20mm,inner=20mm,outer=20mm,twoside,headheight=13pt,headsep=5.75mm]{geometry}
 % \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
@@ -7,6 +8,18 @@
 \usepackage{polyglossia}
 \setdefaultlanguage{magyar}
 \usepackage{aref}
+\usepackage{needspace}
+\widowpenalty=300
+\clubpenalty=300
+\setlength\parskip{0pt}
+\raggedbottom
+\widowpenalty=10000
+\clubpenalty=10000
+
+\usepackage{leading}
+\leading{13pt}
+
+
 %% :LK
 
 \usepackage{verbatim}
@@ -14,14 +27,23 @@
 %\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 
 \usepackage{fontspec}
-\setmainfont{Minion Pro}
+
+%% LK:
+\setmainfont[Mapping=tex-text]{Minion Pro}
+\newfontfamily\submainfont[Mapping=tex-text,Scale=0.9]{Minion Pro}
+%% :LK
 \usepackage[raggedright]{titlesec}
 \setlength{\parskip}{0pt}
 \raggedbottom
 \usepackage{fancyhdr}
-\fancyhead[LE]{\thepage\qquad{\small\leftmark}}
-\fancyhead[RO]{{\small\leftmark}\qquad\thepage}
-\fancyhead[LO,RE]{}
+%% LK:
+% \fancyhead[LE]{\thepage\qquad{\small\leftmark}}
+% \fancyhead[RO]{{\small\leftmark}\qquad\thepage}
+% \fancyhead[LO,RE]{}
+\fancyhead{}                              % clear header fields
+\fancyhead[RO,LE]{{\submainfont\thepage}} % right odd, left even
+\fancyhead[CO,CE]{{\submainfont\textsc{\leftmark}}}
+%% :LK
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 
@@ -35,9 +57,30 @@
 \usepackage{graphicx}
 \usepackage{lscape}
 \usepackage{natbib}
+%% ezzel rakunk be ketoldalas kepeket. Mindig kettesevel
+%% rakunk be kepeket, balra es jobbra, teljes oldalra, fejlec nelkul.
+%% \newcommand{\ketoldaltkep}[2]{
+%%     \cleardoublepage
+%%     \begin{figure*}
+%%         \centering
+%%         \vspace*{-2.5cm}
+%%         \makebox[\textwidth]{
+%%         \includegraphics[width=\paperwidth]{#1}
+%%         }
+%%     \end{figure*}
+    
+%%     \begin{figure*}
+%%         \centering
+%%         \vspace*{-2.5cm}
+%%         \makebox[\textwidth]{
+%%         \includegraphics[width=\paperwidth]{#2}
+%%         }
+%%     \end{figure*}
+%%     \clearpage
+
+%% }
 
 \begin{document}
-
 % csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
 % vagy a pedprogramban
 \newif\ifkerettanterv
