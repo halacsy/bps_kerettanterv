@@ -69,12 +69,14 @@
 % \fancyhead[LO,RE]{}
 \fancyhead{}                              % clear header fields
 \fancyhead[RO,LE]{{\submainfont\thepage}} % right odd, left even
-\fancyhead[CE]{\small\leftmark}
-\fancyhead[CO]{\small\rightmark}
+\fancyhead[CE]{\small\textsc{\thesection. \rightmark}}
+\fancyhead[CO]{\small\textsc{\thechapter. fejezet: \leftmark}}
 
 \pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 %\renewcommand{\chaptermark}[1]{\markright{#1}}
-%\renewcommand{\sectionmark}[1]{}
+%\renewcommand{\sectionmark}[1]{\markboth{#1}}
 %\renewcommand{\subsectionmark}[1]{}
 %% :LK
 \fancyfoot{}
