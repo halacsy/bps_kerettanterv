@@ -47,6 +47,11 @@
 \titleformat{\subsection}{\subsectionfont}{\thesubsection.}{0.5em}{}
 \titleformat{\paragraph}[runin]{\paragraphfont}{}{}{}
 %% :LK
+\usepackage{caption}
+\DeclareCaptionLabelFormat{swappedTable}{#2. táblázat}
+\captionsetup[table]{labelformat=swappedTable}
+\DeclareCaptionLabelFormat{swappedFigure}{#2. ábra}
+\captionsetup[figure]{labelformat=swappedFigure}
 \setlength{\parskip}{0pt}
 \raggedbottom
 \usepackage{fancyhdr}
