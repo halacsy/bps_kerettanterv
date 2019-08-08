@@ -31,8 +31,20 @@
 %% LK:
 \setmainfont[Mapping=tex-text]{Minion Pro}
 \newfontfamily\submainfont[Mapping=tex-text,Scale=0.9]{Minion Pro}
+\newfontfamily\chapterfont[Mapping=tex-text,Scale=2.0]{Minion Pro Bold}
+\newfontfamily\sectionfont[Mapping=tex-text,Scale=1.2]{Minion Pro Bold}
+\newfontfamily\subsectionfont[Mapping=tex-text]{Minion Pro Italic}
+\newfontfamily\paragraphfont[Mapping=tex-text,Scale=0.9]{Minion Pro Bold}
 %% :LK
 \usepackage[raggedright]{titlesec}
+%% LK:
+\titleformat{\chapter}[display]%
+            {\chapterfont}{\thechapter. fejezet}%
+            {0.5 ex}{\vspace{1ex}}
+\titleformat{\section}{\sectionfont}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\subsectionfont}{\thesubsection.}{0.5em}{}
+\titleformat{\paragraph}[runin]{\paragraphfont}{}{}{}
+%% :LK
 \setlength{\parskip}{0pt}
 \raggedbottom
 \usepackage{fancyhdr}
@@ -46,6 +58,7 @@
 %% :LK
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
+
 
 \usepackage{longtable}
 \usepackage{array}
