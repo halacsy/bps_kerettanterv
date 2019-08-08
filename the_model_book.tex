@@ -1,5 +1,5 @@
 \documentclass[10pt,twoside]{book}
-\usepackage[paperwidth=142mm,paperheight=197mm,top=25mm,bottom=20mm,inner=20mm,outer=20mm]{geometry}
+\usepackage[paperwidth=145mm,paperheight=210mm,top=25mm,bottom=20mm,inner=20mm,outer=20mm]{geometry}
 % \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
@@ -8,18 +8,19 @@
 \setdefaultlanguage{magyar}
 \usepackage{aref}
 %% :LK
-\usepackage[cam,a4,center]{crop}
+
 \usepackage{verbatim}
 \usepackage{booktabs}
 %\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 
-
+\usepackage{fontspec}
+\setmainfont{Minion Pro}
 \usepackage[raggedright]{titlesec}
 \setlength{\parskip}{0pt}
 \raggedbottom
 \usepackage{fancyhdr}
 \fancyhead[LE]{\thepage\qquad{\small\leftmark}}
-\fancyhead[RO]{{\small\rightmark}\qquad\thepage}
+\fancyhead[RO]{{\small\leftmark}\qquad\thepage}
 \fancyhead[LO,RE]{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
@@ -35,29 +36,6 @@
 \usepackage{lscape}
 \usepackage{natbib}
 
-%% ezzel rakunk be ketoldalas kepeket. Mindig kettesevel
-%% rakunk be kepeket, balra es jobbra, teljes oldalra, fejlec nelkul.
-\newcommand{\ketoldaltkep}[2]{
-    \cleardoublepage
-    \begin{figure*}
-        \centering
-        \vspace*{-2.5cm}
-        \makebox[\textwidth]{
-        \includegraphics[width=\paperwidth]{#1}
-        }
-    \end{figure*}
-    
-    \begin{figure*}
-        \centering
-        \vspace*{-2.5cm}
-        \makebox[\textwidth]{
-        \includegraphics[width=\paperwidth]{#2}
-        }
-    \end{figure*}
-    \clearpage
-
-}
-
 \begin{document}
 
 % csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
@@ -65,37 +43,9 @@
 \newif\ifkerettanterv
 \kerettantervtrue
 
-\title{Tanulni Tanulunk \\ A Budapest School Modell}
+\title{Budapest School Modell}
 \author{}
 \date{2019. augusztus}
-\frontmatter   
-%% copyright page
-
-\def\secondpage{\clearpage\null\vfill
-\pagestyle{empty}
-\begin{minipage}[b]{0.9\textwidth}
-\footnotesize\raggedright
-\setlength{\parskip}{0.5\baselineskip}
-Kiadja a Misulink Nonprofit Kft.\\
-Felelős kiadó: Halácsy Péter \\
-Felelős szerkesztő: Halmos Ádám \\
-Olvasószerkesztő: Györke Mária \\
-Műszaki szerkesztő: Halmos Mária \\
-Készült 2019-ben a Gyomai Kner Nyomda Zrt-ben \\
-Felelős vezető Erdős Tamás  vezérigazgató \\
-ISBN 978-615-00-5945-7\\
-
-Ez a könyv a Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) licenc szerint terjeszthető és/vagy módosítható.
-\end{minipage}
-\vspace*{2\baselineskip}
-\cleardoublepage
-\rfoot{\thepage}}
-
-\makeatletter
-\g@addto@macro{\maketitle}{\secondpage}
-\makeatother
-%% end of copyrigth page
-
 \maketitle
 %\include{felulvizsgalat_level}
 
@@ -115,7 +65,6 @@ Ez a könyv a Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0
 
 \chapter{Bevezető}
 \input{chapters/kerettanterv/bevezeto}
-
 \input{chapters/pedprogram/0_iskola_celja/alapelvek}
 \label{sec:alapelvek}
 \input{chapters/pedprogram/0_iskola_celja/emberkep}
