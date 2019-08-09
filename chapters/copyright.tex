@@ -1,0 +1,29 @@
+   
+%% copyright page
+
+\def\secondpage{\clearpage\null\vfill
+\pagestyle{empty}
+\begin{minipage}[b]{0.9\textwidth}
+\footnotesize\raggedright
+\setlength{\parskip}{0.5\baselineskip}
+Kiadja a Misulink Nonprofit Kft.\\
+Felelős kiadó: Halácsy Péter \\
+Felelős szerkesztő: Halmos Ádám \\
+Illusztráció: Matyus Dóra és Máthé Kata (remarker.eu) \\
+Olvasószerkesztő: Györke Mária \\
+Műszaki szerkesztő: Halmos Mária \\
+Tördelő: Kálmán László\\
+Készült 2019-ben a Gyomai Kner Nyomda Zrt-ben \\
+Felelős vezető Erdős Tamás  vezérigazgató \\
+ISBN 978-615-00-5945-7\\
+\smallskip
+Ez a könyv a Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) licenc szerint terjeszthető és/vagy módosítható.
+\end{minipage}
+\vspace*{2\baselineskip}
+\cleardoublepage
+\rfoot{\thepage}}
+
+\makeatletter
+\g@addto@macro{\maketitle}{\secondpage}
+\makeatother
+%% end of copyrigth page

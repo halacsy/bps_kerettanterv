@@ -106,7 +106,8 @@
   \clearpage
   \ifodd\value{page}\hbox{}\newpage\fi
 }
-
+% This package suppresses page numbers and headings from appearing on empty pages.
+\usepackage{emptypage}
 %% ezzel rakunk be ketoldalas kepeket. Mindig kettesevel
 %% rakunk be kepeket, balra es jobbra, teljes oldalra, fejlec nelkul.
 \newcommand{\ketoldaltkep}[2]{
@@ -117,7 +118,7 @@
 
 %% ez van a chapter elotti kepek
 \newcommand{\chaptercover}[1]{
-    \cleartoleftpage
+    \cleardoublepage
     \includepdf{#1}
 }
 \begin{document}
