@@ -97,29 +97,29 @@
 \usepackage{graphicx}
 \usepackage{lscape}
 \usepackage{natbib}
+
+
+%% ezek kellenek a ketoldalas kepekhez. pdfpage berak uj oldalt
+\usepackage{pdfpages}
+%% ez meg baloldalt kezdi a kepet
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+
 %% ezzel rakunk be ketoldalas kepeket. Mindig kettesevel
 %% rakunk be kepeket, balra es jobbra, teljes oldalra, fejlec nelkul.
 \newcommand{\ketoldaltkep}[2]{
-    \cleardoublepage
-    \begin{figure*}
-        \centering
-        \vspace*{-2.5cm}
-        \makebox[\textwidth]{
-        \includegraphics[width=\paperwidth]{#1}
-        }
-    \end{figure*}
-    
-    \begin{figure*}
-        \centering
-        \vspace*{-2.5cm}
-        \makebox[\textwidth]{
-        \includegraphics[width=\paperwidth]{#2}
-        }
-    \end{figure*}
-    \clearpage
-
+    \cleartoleftpage
+    \includepdf{#1}
+    \includepdf{#2}
 }
 
+%% ez van a chapter elotti kepek
+\newcommand{\chaptercover}[1]{
+    \cleartoleftpage
+    \includepdf{#1}
+}
 \begin{document}
 % csinalunk egy feltetelt, hogy a szovegben tudjuk, hogy kerettantervben vagyunk
 % vagy a pedprogramban
@@ -129,6 +129,8 @@
 \title{Budapest School Modell}
 \author{}
 \date{2019. augusztus}
+\frontmatter
+\input{chapters/copyright}
 \maketitle
 %\include{felulvizsgalat_level}
 
@@ -145,23 +147,30 @@
 
 % \pagestyle{plain}
 \pagestyle{fancy}
-
+\mainmatter
+\chaptercover{pics/chapter_covers/1d.JPG}
 \chapter{Bevezető}
 \input{chapters/kerettanterv/bevezeto}
+
 \input{chapters/pedprogram/0_iskola_celja/alapelvek}
 \label{sec:alapelvek}
 \input{chapters/pedprogram/0_iskola_celja/emberkep}
 \input{chapters/pedprogram/0_iskola_celja/kapcsolodasok}
 
+\chaptercover{pics/chapter_covers/2d.JPG}
 \chapter{Tanulás megközelítése}
 \input{chapters/pedprogram/1-tanulas-megkozelitese/pedagogiai-pszichologiai-hatter}
 \input{chapters/pedprogram/1-tanulas-megkozelitese/pedagogiai-modszerek}
 \input{chapters/kerettanterv/kiemelt-fejlesztesi-iranyelvek}
 \input{chapters/pedprogram/1-tanulas-megkozelitese/jutalmazas-ertekeles}
 \input{chapters/pedprogram/1-tanulas-megkozelitese/kiemelt-figyelmet-igenylo-gyerekek}
+\chaptercover{pics/chapter_covers/3d.JPG}
 
 \chapter{Tanulás szervezése}
 \input{chapters/pedprogram/2-iskola-szervezete/bevezeto}
+
+
+\ketoldaltkep{pics/1A_MIKROISK_SOMA.JPG}{pics/1B_MIKROISK_FLORA.JPG}
 \input{chapters/kerettanterv/struktura/mikroiskola}
 \input{chapters/kerettanterv/struktura/tanev_ritmusa}
 \input{chapters/kerettanterv/struktura/sajat-celok}
@@ -191,6 +200,7 @@
 
 
 
+\chaptercover{pics/chapter_covers/4d.JPG}
 
 \chapter{A tanulás keretei}
 \input{chapters/kerettanterv/keretek/biztonsagos_kornyezet}
@@ -217,10 +227,12 @@
 \input{chapters/pedprogram/4-helyi-tanterv/nemzetisegek}
 \input{chapters/pedprogram/4-helyi-tanterv/kornyezeti-neveles}
 \input{chapters/pedprogram/4-helyi-tanterv/tankonyvek}
+\chaptercover{pics/chapter_covers/5d.JPG}
 
 \input{chapters/kerettanterv/jogszabalyok}
 \input{chapters/pedprogram/5_jogi_referenciak}
 
+\chaptercover{pics/chapter_covers/6d.JPG}
 
 \chapter{Tantárgyi tanulási eredmények}
 \label{sec:tantargyi_tanulasi_eredmenyek}
