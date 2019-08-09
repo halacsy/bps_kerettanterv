@@ -49,6 +49,10 @@
 \titleformat{\subsubsection}
 {\subsubsectionfont}{}{}{}
 \titleformat{\paragraph}[runin]{\paragraphfont}{}{}{}
+%% chaptert romai szamokkal
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand*\thesection{\arabic{section}}
+
 %% subsection alatt nincs mar szamozas es nem is kerul a tartalomjegyzekbe
 %% UpperCase lesz a subsection es sima bold a subsubsection
 \setcounter{secnumdepth}{1}
@@ -69,12 +73,12 @@
 % \fancyhead[LO,RE]{}
 \fancyhead{}                              % clear header fields
 \fancyhead[RO,LE]{{\submainfont\thepage}} % right odd, left even
-\fancyhead[CE]{\small\textsc{\rightmark}}
+\fancyhead[CE]{\small\textsc{Tanulni tanulunk -- A Budapest School Modell}}
 \fancyhead[CO]{\small\textsc{\leftmark}}
 
 \pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter. fejezet -- #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 %\renewcommand{\chaptermark}[1]{\markright{#1}}
 %\renewcommand{\sectionmark}[1]{\markboth{#1}}
 %\renewcommand{\subsectionmark}[1]{}
