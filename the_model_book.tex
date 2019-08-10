@@ -131,7 +131,9 @@
 %% ez meg baloldalt kezdi a kepet
 \newcommand*\cleartoleftpage{%
   \clearpage
-  \ifodd\value{page}\hbox{}\newpage\fi
+  \ifodd\value{page}\null
+    \thispagestyle{empty}%
+    \newpage\fi
 }
 % This package suppresses page numbers and headings from appearing on empty pages.
 \usepackage{emptypage}
