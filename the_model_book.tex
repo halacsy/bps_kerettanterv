@@ -37,7 +37,7 @@
 \newfontfamily\sectionfont[Mapping=tex-text,Scale=1.2]{Myriad Pro}
 \newfontfamily\subsectionfont[Mapping=tex-text]{Myriad Pro}
 \newfontfamily\subsubsectionfont[Mapping=tex-text]{Myriad Pro Bold}
-\newfontfamily\paragraphfont[Mapping=tex-text,Scale=0.9]{Minion Pro Bold}
+\newfontfamily\paragraphfont[Mapping=tex-text,Scale=0.9]{Myriad Pro Bold}
 %% :LK
 \usepackage[raggedright]{titlesec}
 %% LK:
@@ -46,9 +46,14 @@
             {0.5 ex}{\vspace{1ex}}
 \titleformat{\section}{\sectionfont}{\thesection.}{0.5em}{}
 \titleformat{\subsection}{\subsectionfont}{}{the}{\MakeUppercase}
-\titleformat{\subsubsection}
-{\subsubsectionfont}{}{}{}
+\titleformat{\subsubsection}{\subsubsectionfont}{}{}{}
 \titleformat{\paragraph}[runin]{\paragraphfont}{}{}{}
+
+
+\titlespacing{\section}{0pt}{*4}{*1.5}
+\titlespacing{\subsection}{0pt}{*4}{*1.5}
+\titlespacing{\subsubsection}{0pt}{*4}{*1.5}
+
 %% chaptert romai szamokkal
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand*\thesection{\arabic{section}}
