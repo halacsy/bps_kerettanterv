@@ -52,6 +52,33 @@
 %% chaptert romai szamokkal
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand*\thesection{\arabic{section}}
+%% tartalomjegyzek
+%% innen masoltam https://tex.stackexchange.com/questions/380933/toc-with-auto-spacing-for-roman-enumeration
+\usepackage[rightlabels]{titletoc}
+\contentsmargin{1.5em}
+\titlecontents{chapter}
+[2em] %
+{\bigskip}
+{\contentslabel[\thecontentslabel.]{2em}\hspace{0.333em}}%\thecontentslabel
+{\hspace*{-2em}}
+{\hfill\contentspage}[\smallskip]%\hfill
+
+\titlecontents{section}% <section>
+[2.35em]% <left>
+{\small\contentsmargin{1.5em}}% <above-code>
+{\thecontentslabel.\hspace{3pt}}% <numbered-entry-format>; you could also use {\thecontentslabel. } to show the numbers
+{}% <numberless-entry-format>
+{\enspace\titlerule*[0.5pc]{.}~\contentspage}% <filler-page-format>
+
+\titlecontents*{subsection}% <section>
+[3.23em]% <left>
+{\footnotesize\contentsmargin{0em}}% <above-code>
+{\thecontentslabel. \hspace{3pt}}% <numbered-entry-format>; you could also use {\thecontentslabel. } to show the numbers
+{}% <numberless-entry-format>
+{}% <filler-page-format>
+[ --- \ ]% <separator>
+[]% <end>
+%% tartalomjegyzek vege
 
 %% subsection alatt nincs mar szamozas es nem is kerul a tartalomjegyzekbe
 %% UpperCase lesz a subsection es sima bold a subsubsection
