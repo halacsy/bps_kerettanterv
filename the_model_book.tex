@@ -161,7 +161,10 @@
 \newif\ifkerettanterv
 \kerettantervtrue
 
-\frontmatter
+% LK:
+% \frontmatter
+\pagestyle{plain}
+% :LK
 \begin{titlepage} % Suppresses headers and footers on the title page
 
 	\centering % Centre everything on the title page
@@ -184,10 +187,11 @@
 \input{chapters/eloszo}
 
 
-\mainmatter
-
-
 \chaptercover{pics/chapter_covers/1e.jpg}
+% LK:
+% \mainmatter
+\pagestyle{fancy}
+% :LK
 \chapter{Az iskola célja}
 \input{chapters/kerettanterv/bevezeto}
 
