@@ -50,9 +50,10 @@
 \titleformat{\paragraph}[runin]{\paragraphfont}{}{}{}
 
 
-\titlespacing{\section}{0pt}{*4}{*1.5}
-\titlespacing{\subsection}{0pt}{*4}{*1.5}
-\titlespacing{\subsubsection}{0pt}{*4}{*1.5}
+% LK: added stars for unindented paragraph
+\titlespacing*{\section}{0pt}{*4}{*1.5}
+\titlespacing*{\subsection}{0pt}{*4}{*1.5}
+\titlespacing*{\subsubsection}{0pt}{*4}{*1.5}
 
 %% chaptert romai szamokkal
 \renewcommand{\thechapter}{\Roman{chapter}}
@@ -108,7 +109,6 @@
 \fancyhead[CE]{\small\textsc{Tanulni tanulunk -- A Budapest School Modell}}
 \fancyhead[CO]{\small\textsc{\leftmark}}
 
-\pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 %\renewcommand{\chaptermark}[1]{\markright{#1}}
@@ -163,8 +163,9 @@
 
 % LK:
 % \frontmatter
-\pagestyle{plain}
+\pagestyle{empty}
 % :LK
+
 \begin{titlepage} % Suppresses headers and footers on the title page
 
 	\centering % Centre everything on the title page
@@ -184,14 +185,18 @@
 \tableofcontents
 
 \chapter{Előszó}
+\begin{spacing}{.9999}
 \input{chapters/eloszo}
+\end{spacing}
 
-
-\chaptercover{pics/chapter_covers/1e.jpg}
 % LK:
 % \mainmatter
 \pagestyle{fancy}
+\overfullrule 2em
 % :LK
+
+\chaptercover{pics/chapter_covers/1e.jpg}
+
 \chapter{Az iskola célja}
 \input{chapters/kerettanterv/bevezeto}
 
