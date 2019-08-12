@@ -39,7 +39,15 @@
 \newfontfamily\subsubsectionfont[Mapping=tex-text]{Myriad Pro Bold}
 \newfontfamily\paragraphfont[Mapping=tex-text,Scale=0.9]{Myriad Pro Bold}
 %% :LK
-\usepackage[raggedright]{titlesec}
+\usepackage[raggedright,pagestyles]{titlesec}
+\newpagestyle{main}{%
+  \sethead[][\textsc{Tanulni tanulunk -- A Budapest School modell}][] % even
+          {}{\textsc{\thechapter. fejezet: \chaptertitle}}{} % odd
+  \setfoot[][\thepage][]{}{\thepage}{}%
+}
+\renewpagestyle{empty}{%
+  \sethead[][][]{}{}{}%
+}
 %% LK:
 \titleformat{\chapter}[display]%
             {\chapterfont}{\thechapter. fejezet}%
@@ -99,15 +107,23 @@
 \captionsetup[figure]{labelformat=swappedFigure}
 \setlength{\parskip}{0pt}
 \raggedbottom
-\usepackage{fancyhdr}
 %% LK:
+% \usepackage{fancyhdr}
+%% :LK
+%% LK:
+% \pagestyle{fancy}
 % \fancyhead[LE]{\thepage\qquad{\small\leftmark}}
 % \fancyhead[RO]{{\small\leftmark}\qquad\thepage}
 % \fancyhead[LO,RE]{}
-\fancyhead{}                              % clear header fields
-\fancyhead[RO,LE]{{\submainfont\thepage}} % right odd, left even
-\fancyhead[CE]{\small\textsc{Tanulni tanulunk -- A Budapest School Modell}}
-\fancyhead[CO]{\small\textsc{\leftmark}}
+%% :LK
+
+%% LK:
+% \fancyhead{}                              % clear header fields
+% \fancyhead[RO,LE]{{\submainfont\thepage}} % right odd, left even
+% \fancyhead[CE]{\small\textsc{Tanulni tanulunk -- A Budapest School Modell}}
+% \fancyhead[CO]{\small\textsc{\leftmark}}
+%% :LK
+
 
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -115,8 +131,12 @@
 %\renewcommand{\sectionmark}[1]{\markboth{#1}}
 %\renewcommand{\subsectionmark}[1]{}
 %% :LK
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
+
+%% LK:
+% \fancyfoot{}
+
+% \renewcommand{\headrulewidth}{0pt}
+%% :LK
 
 
 \usepackage{longtable}
@@ -191,7 +211,8 @@
 
 % LK:
 % \mainmatter
-\pagestyle{fancy}
+% \pagestyle{fancy}
+\pagestyle{main}
 % :LK
 
 \chaptercover{pics/chapter_covers/1e.jpg}
