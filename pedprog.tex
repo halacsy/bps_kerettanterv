@@ -17,12 +17,37 @@
 \usepackage[justification=centering]{caption}
 \usepackage{url}
 \usepackage[nottoc,numbib]{tocbibind}
-\DeclareUnicodeCharacter{2212}{-}
+%\DeclareUnicodeCharacter{2212}{-}
 % heylyseglista tablazat miatt
 \usepackage{graphicx}
 \usepackage{lscape}
 \usepackage{natbib}
 \pagestyle{headings}
+
+%% ezek kellenek a ketoldalas kepekhez. pdfpage berak uj oldalt
+\usepackage{pdfpages}
+%% ez meg baloldalt kezdi a kepet
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\null
+    \thispagestyle{empty}%
+    \newpage\fi
+}
+% This package suppresses page numbers and headings from appearing on empty pages.
+\usepackage{emptypage}
+%% ezzel rakunk be ketoldalas kepeket. Mindig kettesevel
+%% rakunk be kepeket, balra es jobbra, teljes oldalra, fejlec nelkul.
+\newcommand{\ketoldaltkep}[2]{
+    \cleartoleftpage
+    \includepdf[width=145mm]{#1}
+    \includepdf[width=145mm]{#2}
+}
+
+%% ez van a chapter elotti kepek
+\newcommand{\chaptercover}[1]{
+    \cleardoublepage
+    \includepdf[width=145mm]{#1}
+}
 
 \usepackage[yyyymmdd,hhmmss]{datetime}
 
